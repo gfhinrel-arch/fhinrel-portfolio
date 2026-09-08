@@ -9,7 +9,7 @@ document.title = `${project.title} — Portfolio`;
 document.querySelector('#project-page').innerHTML = `
   <section class="project-hero">
     <div><p class="project-label">${project.number} / ${project.category.toUpperCase()}</p><h1>${project.title}</h1><p class="project-description">${project.description}</p></div>
-    <div class="project-visual"><img src="${project.image}" alt="Preview ${project.title}" style="width:100%;height:100%;object-fit:cover;display:block" /></div>
+    <div class="project-visual"><img src="${project.image}" alt="Preview ${project.title}" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block" /></div>
   </section>
   <section class="project-meta">
     <article><p class="project-label">CLIENT</p><h2>${project.client}</h2></article>

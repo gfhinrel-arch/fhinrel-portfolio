@@ -1,0 +1,143 @@
+/* ===== Cross-browser, Android & touch hardening ===== */
+html{height:100%;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html,body{max-width:100%}
+html{overflow-x:hidden}
+@supports(overflow:clip){html,body{overflow-x:clip}}
+
+/* Custom scrollbars: WebKit/Blink + Firefox (consistent on Android, iOS, Windows, macOS) */
+html{scrollbar-width:thin;scrollbar-color:#2c2c2e #0b0b0c}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:#0b0b0c}
+::-webkit-scrollbar-thumb{background:#2c2c2e;border:2px solid #0b0b0c;border-radius:8px}
+::-webkit-scrollbar-thumb:hover{background:#3a3a3c}
+::-webkit-scrollbar-thumb:active{background:var(--accent)}
+::-webkit-scrollbar-corner{background:transparent}
+
+/* Mobile tap defaults: no double-tap zoom delay, no gray highlight flash */
+*{-webkit-tap-highlight-color:transparent}
+a,button,input,[role=button],.project,.social-card,.portfolio-tab,.tech-card,.skills article,.certificate-card{touch-action:manipulation}
+
+/* Vendor-prefixed transform duplicates for hover surfaces (old WebKit/Android WebView) */
+.button:hover{-webkit-transform:translateY(-4px)}
+.social-card:hover{-webkit-transform:translateY(-3px) scale(1.03)}
+.tech-card:hover{-webkit-transform:translateY(-7px)}
+.skills article:hover{-webkit-transform:translateY(-7px)}
+.certificate-card:hover .certificate-photo{-webkit-transform:scale(1.04)}
+.project:hover .project-image{-webkit-transform:scale(1.015)}
+.project:hover .project-info a{-webkit-transform:translateY(-2px)}
+
+/* Touch devices: press feedback instead of sticky hover states */
+@media(hover:none),(pointer:coarse){
+  .button:hover{transform:none;-webkit-transform:none}
+  nav a:hover{color:#929292;background:transparent;box-shadow:none}
+  .portfolio-tab:hover{color:#a9a9a9}
+  .social-card:hover{transform:none;-webkit-transform:none;border-color:var(--line);box-shadow:none}
+  .tech-card:hover{transform:none;-webkit-transform:none;border-color:var(--line);box-shadow:none}
+  .skills article:hover{transform:none;-webkit-transform:none;border-color:var(--line)}
+  .certificate-card:hover{padding-inline:0;background:transparent}
+  .certificate-card:hover .certificate-photo{filter:grayscale(1);transform:none;-webkit-transform:none}
+  .project:hover .project-image{filter:none;transform:none;-webkit-transform:none}
+  .project:hover .project-info a{background:transparent;color:var(--accent);transform:none;-webkit-transform:none}
+
+  .button:active{transform:translateY(-2px) scale(.98);-webkit-transform:translateY(-2px) scale(.98)}
+  nav a:active{color:var(--cream);background:#3a3a3c;box-shadow:0 3px 12px rgba(0,0,0,.25)}
+  .portfolio-tab:active{background:#3a3a3c;color:var(--cream)}
+  .social-card:active{transform:translateY(-1px) scale(1.01);-webkit-transform:translateY(-1px) scale(1.01);border-color:var(--brand);box-shadow:0 10px 26px rgba(0,0,0,.42)}
+  .tech-card:active{border-color:rgba(185,255,76,.5)}
+  .skills article:active{border-color:var(--accent)}
+  .project:active .project-image{filter:brightness(1.1)}
+  .project:active .project-info a{background:var(--accent);color:#111}
+  .certificate-card:active{background:rgba(185,255,76,.06)}
+}
+
+/* Large desktop & wide Windows monitors: lift the 1180px box, fill the screen */
+@media(min-width:1280px){
+  .wrap{max-width:none;padding-inline:clamp(40px,5vw,88px)}
+  .hero{min-height:100vh;min-height:100svh;padding-block:clamp(30px,6vh,72px)}
+  .hero-copy{max-width:640px}
+  .hero h1{font-size:clamp(40px,4.8vw,72px)}
+  .scroll{left:clamp(40px,5vw,88px);bottom:34px}
+  .section{padding-top:clamp(75px,9vh,120px);padding-bottom:clamp(75px,9vh,120px)}
+}
+
+/* Mobile lanyard assembly is fully width-driven (no fixed pixel offsets):
+   JS sets --card-width / --card-gap from the actual viewport, and the hero is a
+   stacked flex column so the portrait (and its string anchor) always sit BELOW
+   the CTA buttons in normal flow — the pin can never overlap the buttons. */
+@media(max-width:768px){
+  .hero{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+    min-height:0;min-height:fit-content;padding-top:24px;text-align:center}
+  .hero-copy{display:flex;flex-direction:column;align-items:center;width:100%}
+  .hero-actions{width:100%}
+  .hero > .scroll{position:static;margin:34px auto 0}
+  .portrait{width:100%;height:auto;min-height:0;margin-top:8px;justify-content:center;transform:none}
+
+  /* Card + string sized from --card-width (JS), origin fixed at top of portrait box */
+  .hero .id-card{width:var(--card-width,282px);margin-top:var(--card-gap,64px);user-select:none;
+    -webkit-user-select:none;-webkit-touch-callout:none}
+  .lanyard{top:var(--lanyard-top,0);left:calc(50% - var(--lanyard-half,65px))}
+  .lanyard-canvas,.lanyard-pin{user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+}
+
+/* Narrow Android phones: 360-430px */
+@media(max-width:430px){
+  .wrap{padding-inline:16px}
+  .hero{padding-top:58px}
+  .hero-actions{flex-wrap:wrap;gap:12px;margin-top:26px}
+  .hero-actions .button{flex:1 1 100%;max-width:100%;justify-content:space-between;padding-inline:18px}
+  .section{padding-top:62px;padding-bottom:62px}
+  .section h2{font-size:clamp(28px,8.4vw,38px)}
+  .portfolio h2{margin:26px 0 10px}
+  .portfolio-intro{margin-bottom:26px}
+  .portfolio-tabs{padding:4px;margin-bottom:30px}
+  .portfolio-tab{min-height:40px;font-size:10.5px;padding-inline:4px;white-space:nowrap}
+  .project-info{flex-wrap:wrap}
+  .project-info h3{font-size:clamp(13px,4vw,15px)}
+  .project-heading{flex-wrap:wrap;gap:8px}
+  .project-heading h3{font-size:clamp(14px,4.4vw,16px);max-width:100%;flex:1 1 auto}
+  .project-tag{font-size:8px;padding:3px 7px;margin:0;}
+  .project-image,.project-large .project-image{aspect-ratio:16/9}
+  .contact h2{font-size:clamp(32px,9vw,48px);margin:34px 0 22px}
+  .big-mail{font-size:clamp(16px,4.6vw,22px);word-break:break-word}
+  .contact-bottom{margin-top:60px}
+  .social-card{padding:14px 16px;gap:12px}
+  .social-icon{width:32px;height:32px}
+  .social-text strong{font-size:14px}
+  .social-text small{font-size:8px}
+  footer{font-size:8px;gap:8px}
+  .vertical-word{display:none}
+  .drag-hint{bottom:2px;font-size:7px}
+}
+
+/* ===== Certificate preview modal ===== */
+.certificate-card{cursor:pointer}
+.certificate-card:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.certificate-modal{position:fixed;inset:0;z-index:1100;display:flex;align-items:center;justify-content:center;padding:24px;
+  opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s ease,visibility .25s ease}
+.certificate-modal.open{opacity:1;visibility:visible;pointer-events:auto}
+.certificate-modal-backdrop{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000c;
+  backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);cursor:pointer}
+.certificate-modal-panel{position:relative;z-index:1;max-width:min(980px,92vw);width:100%;padding:18px;
+  background:#151516;border:1px solid var(--line);border-radius:18px;box-shadow:0 24px 80px #000a;
+  animation:cert-modal-in .3s cubic-bezier(.22,1,.36,1) both}
+@keyframes cert-modal-in{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:none}}
+.certificate-modal-image{width:100%;height:auto;display:block;border-radius:10px;background:#000}
+.certificate-modal-close{position:absolute;top:10px;right:10px;width:40px;height:40px;padding:0;border:0;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;background:#000a;color:var(--cream);font-size:15px;line-height:1;
+  cursor:pointer;transition:background .2s,color .2s,transform .2s}
+.certificate-modal-close:hover{background:var(--accent);color:#0a0a0a;transform:rotate(90deg)}
+.certificate-modal-meta{display:flex;align-items:baseline;gap:14px;margin-top:14px;flex-wrap:wrap}
+.certificate-modal-category{font:10px 'DM Mono',monospace;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;margin:0}
+.certificate-modal-title{margin:0;font-size:18px;font-weight:500;color:var(--cream)}
+.certificate-modal-year{font:10px 'DM Mono',monospace;color:var(--muted);margin-left:auto}
+.certificate-modal-open{display:inline-flex;align-items:center;gap:6px;margin-top:13px;padding:9px 15px;border:1px solid var(--line);
+  border-radius:999px;background:transparent;color:var(--accent);font:500 12px 'Space Grotesk',sans-serif;text-decoration:none;
+  transition:background .2s,border-color .2s,-webkit-transform .2s,transform .2s}
+.certificate-modal-open:hover{background:rgba(185,255,76,.08);border-color:var(--accent);transform:translateY(-2px);-webkit-transform:translateY(-2px)}
+body.modal-open{overflow:hidden}
+@media(max-width:480px){
+  .certificate-modal{padding:12px}
+  .certificate-modal-panel{max-width:96vw;padding:12px}
+  .certificate-modal-title{font-size:15px}
+}

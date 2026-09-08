@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="portfolio-images.css" />
     <link rel="stylesheet" href="scroll-animations.css" />
     <link rel="stylesheet" href="tech-stack.css" />
+    <link rel="stylesheet" href="crossbrowser.css" />
   </head>
   <body>
     <div class="loader" aria-hidden="true">
@@ -27,7 +28,6 @@
       <small>PLEASE WAIT A MOMENT</small>
     </div>
     <div class="noise"></div>
-    <div class="cursor-glow" aria-hidden="true"></div>
     <div class="lanyard-pin" aria-hidden="true"></div>
     <header class="nav wrap">
       <a href="#home" class="brand" aria-label="Beranda">G<span>.</span></a>
@@ -43,27 +43,26 @@
     <main>
       <section id="home" class="hero wrap">
         <div class="hero-copy reveal">
-          <p class="eyebrow"><span></span> DIGITAL CREATIVE</p>
-          <h1><span>Frontend</span><span>Developer</span><span><em>&amp; Creative</em></span></h1>
-          <p class="intro">Mahasiswa informatika yang berfokus pada desain antarmuka, pengembangan web, dan pengalaman digital yang bermakna.</p>
+          <p class="eyebrow" aria-label="DIGITAL CREATIVE"><span></span> <span class="type-wrap" aria-hidden="true"><span class="type-text" data-text="DIGITAL CREATIVE">DIGITAL CREATIVE</span><span class="type-cursor">|</span></span></p>
+          <h1><span>Fullstack Developer</span><span><em>&amp; Tech Entrepreneur</em></span></h1>
+          <p class="intro">Pelajar dan Fullstack Developer serta Founder yang berdedikasi menciptakan produk web modern, solusi finansial digital, dan ekosistem teknologi yang efisien.</p>
           <div class="hero-actions">
             <a class="button primary" href="#portfolio">Lihat karya <b>↘</b></a>
             <a class="button plain" href="#contact">Mari berkolaborasi <b>↗</b></a>
           </div>
         </div>
         <div class="portrait reveal">
-          <div class="ring ring-one"></div><div class="ring ring-two"></div>
           <p class="drag-hint">CLICK &amp; HOLD TO MOVE</p>
           <canvas class="lanyard-canvas" aria-hidden="true"></canvas>
           <div class="lanyard" aria-hidden="true"><span class="lanyard-ribbon"></span><i class="lanyard-clip"></i><i class="lanyard-cord"></i></div>
           <div class="portrait-card id-card" role="button" tabindex="0" aria-label="Tahan dan gerakkan kartu identitas">
             <div class="card-hole"></div>
-            <div class="portrait-head id-card-top"><span>GHIYAS FHINREL / ID.025</span><b>●</b></div>
-            <div class="portrait-art"><img src="images/id-card.png" alt="Foto Ghiyas Fhinrel Musyaffa" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block" /></div>
-            <div class="portrait-caption"><strong>GHIYAS FHINREL MUSYAFFA</strong><br /><small>FRONTEND DEVELOPER</small></div>
-            <div class="id-card-bottom"><span>CREATIVE DEPARTMENT</span><span>2025</span></div>
+            <div class="card-scene">
+              <div class="card-face card-front"><img src="images/id card fhinrel.png" alt="Kartu identitas Ghiyas Fhinrel Musyaffa (depan)" /></div>
+              <div class="card-face card-back"><img src="images/id card fhinrel back.png" alt="Kartu identitas Ghiyas Fhinrel Musyaffa (belakang)" /></div>
+            </div>
           </div>
-          <p class="vertical-word">CREATIVE PORTFOLIO</p>
+          <p class="vertical-word">FULLSTACK PORTFOLIO</p>
         </div>
         <a href="#about" class="scroll">SCROLL TO EXPLORE <span>↓</span></a>
       </section>
@@ -72,18 +71,18 @@
         <p class="section-index">01 / ABOUT ME</p>
         <div class="about-grid">
           <div class="about-content">
-            <h2>Merancang hal yang <em>berguna</em>, bukan sekadar terlihat bagus.</h2>
+            <h2>Merancang sistem yang <em>berdampak</em>, bukan sekadar terlihat bagus.</h2>
             <div class="about-copy">
-            <p>Saya memadukan ketelitian seorang developer dan rasa ingin tahu seorang kreator untuk membangun produk digital yang jernih, cepat, dan menyenangkan digunakan.</p>
+            <p>Memadukan presisi kodingan fullstack, pemikiran strategis seorang founder, dan ekosistem finansial digital untuk membangun produk yang scalable, aman, dan efisien.</p>
             </div>
-            <div class="about-actions"><a href="Ryandra-CV.txt" download class="button plain">Download CV <b>↓</b></a><a href="#portfolio" class="button primary">View Projects <b>↘</b></a></div>
+            <div class="about-actions"><a href="images/CV-GHIYAS FHINREL.pdf" download class="button plain">Download CV <b>↓</b></a><a href="#portfolio" class="button primary">View Projects <b>↘</b></a></div>
           </div>
-          <div class="about-photo"><img src="images/about.png" alt="Foto profil Ghiyas Fhinrel Musyaffa" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block" /></div>
+          <div class="about-photo"><img src="images/foto fhinrel jas.jpeg" alt="Foto profil Ghiyas Fhinrel Musyaffa" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block" /></div>
         </div>
         <div class="skills">
-          <article><span>01</span><h3>Web Design</h3><p>Menciptakan tampilan yang berkarakter dan mudah dipahami.</p></article>
-          <article><span>02</span><h3>Development</h3><p>Mewujudkan desain menjadi antarmuka yang responsif.</p></article>
-          <article><span>03</span><h3>Creative Work</h3><p>Menyusun identitas visual untuk cerita yang lebih kuat.</p></article>
+          <article><span>01</span><h3>Tech Leadership</h3><p>Merancang visi produk digital, arsitektur sistem, dan mengeksekusi strategi dari ide hingga siap rilis.</p></article>
+          <article><span>02</span><h3>Fullstack Development</h3><p>Membangun aplikasi web end-to-end yang cepat, scalable, aman, dan responsif di berbagai perangkat.</p></article>
+          <article><span>03</span><h3>Financial & Tech Strategy</h3><p>Mengintegrasikan pemahaman finansial digital dan efisiensi model bisnis ke dalam ekosistem produk.</p></article>
         </div>
       </section>
 
@@ -100,34 +99,28 @@
         <div class="portfolio-block portfolio-panel active" id="projects" role="tabpanel" aria-labelledby="projects-tab">
           <div class="portfolio-block-heading"><p>01 / PROJECTS</p><span>SELECTED WORK</span></div>
           <div class="projects">
-            <article class="project project-large reveal"><div class="project-image"><img class="project-photo" src="images/3.png" alt="Preview Personal Portfolio" style="opacity:1;filter:none" /></div><div class="project-info"><div><p>WEB DESIGN · DEVELOPMENT</p><h3>Personal Portfolio</h3></div><a href="project.html?id=personal-portfolio" aria-label="Lihat proyek Personal Portfolio">↗</a></div></article>
-            <article class="project reveal"><div class="project-image"><img class="project-photo" src="images/3.png" alt="Preview Coffee Landing Page" style="opacity:1;filter:none" /></div><div class="project-info"><div><p>BRANDING · WEB</p><h3>Coffee Landing Page</h3></div><a href="project.html?id=coffee-landing" aria-label="Lihat proyek Coffee Landing Page">↗</a></div></article>
-            <article class="project reveal"><div class="project-image"><img class="project-photo" src="images/3.png" alt="Preview Typography Study" style="opacity:1;filter:none" /></div><div class="project-info"><div><p>EXPERIMENT · VISUAL</p><h3>Typography Study</h3></div><a href="project.html?id=typography-study" aria-label="Lihat proyek Typography Study">↗</a></div></article>
+            <article class="project project-large reveal"><div class="project-image"><img class="project-photo" src="images/foto fhin group landscape.jpeg" alt="Preview SMIS" style="opacity:1;filter:none;object-fit:cover;object-position:center" /></div><div class="project-info"><div><p>FULLSTACK · ENTERPRISE SYSTEM</p><div class="project-heading"><h3>School Management Information System</h3><span class="project-tag">SMIS</span></div></div><a href="project.html?id=smis" aria-label="Lihat detail proyek SMIS">LIHAT DETAIL ↗</a></div></article>
+            <article class="project reveal"><div class="project-image"><img class="project-photo" src="images/foto fhin group landscape.jpeg" alt="Preview Coming Soon" style="opacity:1;filter:none;object-fit:cover;object-position:center" /></div><div class="project-info"><div><p>COMING SOON</p><h3>Coming Soon</h3></div><a href="project.html?id=Next%20Project" aria-label="Lihat detail proyek Coming Soon">LIHAT DETAIL ↗</a></div></article>
           </div>
         </div>
 
         <div class="portfolio-block portfolio-panel" id="certificates" role="tabpanel" aria-labelledby="certificates-tab" hidden>
           <div class="portfolio-block-heading"><p>02 / CERTIFICATES</p><span>CONTINUOUS LEARNING</span></div>
           <div class="certificate-list">
-            <article class="certificate-card reveal"><img class="certificate-photo" src="images/3.png" alt="Sertifikat Frontend Web Development" /><div><p>WEB DEVELOPMENT</p><h3>Frontend Web Development</h3></div><span class="certificate-year">2025</span></article>
-            <article class="certificate-card reveal"><img class="certificate-photo" src="images/3.png" alt="Sertifikat UI/UX Design Fundamentals" /><div><p>UI / UX DESIGN</p><h3>UI/UX Design Fundamentals</h3></div><span class="certificate-year">2025</span></article>
-            <article class="certificate-card reveal"><img class="certificate-photo" src="images/3.png" alt="Sertifikat Creative Digital Design" /><div><p>DIGITAL CREATIVE</p><h3>Creative Digital Design</h3></div><span class="certificate-year">2024</span></article>
+            <article class="certificate-card reveal" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Lihat sertifikat: Introduction to Financial Literacy"><img class="certificate-photo" src="images/sertifikat-dicoding-financial-literacy.jpeg" alt="Sertifikat Introduction to Financial Literacy" /><div><p>FINANCE</p><h3>Introduction to Financial Literacy</h3></div><span class="certificate-year">2026</span></article>
+            <article class="certificate-card reveal" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Lihat sertifikat: Belajar Membuat Front-End Web untuk Pemula"><img class="certificate-photo" src="images/sertifikat-dicoding-membuat-frontend-pemula.jpeg" alt="Sertifikat Belajar Membuat Front-End Web untuk Pemula" /><div><p>FRONTEND DEVELOPMENT</p><h3>Belajar Membuat Front-End Web untuk Pemula</h3></div><span class="certificate-year">2026</span></article>
+            <article class="certificate-card reveal" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Lihat sertifikat: Belajar Dasar Pemrograman JavaScript"><img class="certificate-photo" src="images/sertifikat-dicoding-pemograman-javascript.jpeg" alt="Sertifikat Belajar Dasar Pemrograman JavaScript" /><div><p>JAVASCRIPT PROGRAMMING</p><h3>Belajar Dasar Pemrograman JavaScript</h3></div><span class="certificate-year">2026</span></article>
+            <article class="certificate-card reveal" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Lihat sertifikat: Belajar Dasar Pemrograman Web"><img class="certificate-photo" src="images/sertifikat-dicoding-pemograman-web.jpeg" alt="Sertifikat Belajar Dasar Pemrograman Web" /><div><p>WEB DEVELOPMENT</p><h3>Belajar Dasar Pemrograman Web</h3></div><span class="certificate-year">2026</span></article>
+            <article class="certificate-card reveal" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Lihat sertifikat: Belajar Strategi Pengembangan Diri"><img class="certificate-photo" src="images/sertifikat-dicoding-pengembangan-diri.jpeg" alt="Sertifikat Belajar Strategi Pengembangan Diri" /><div><p>PERSONAL DEVELOPMENT</p><h3>Belajar Strategi Pengembangan Diri</h3></div><span class="certificate-year">2026</span></article>
           </div>
         </div>
 
         <div class="portfolio-block portfolio-panel" id="tech-stack" role="tabpanel" aria-labelledby="tech-stack-tab" hidden>
           <div class="portfolio-block-heading"><p>03 / TECH STACK</p><span>TOOLS I USE</span></div>
           <div class="tech-stack-grid">
-            <article class="tech-card reveal"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" /><h3>React.Js</h3></article>
-            <article class="tech-card reveal"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="" /><h3>TypeScript</h3></article>
-            <article class="tech-card reveal"><img class="tech-icon" src="https://cdn.simpleicons.org/tailwindcss/38BDF8" alt="" /><h3>Tailwind</h3></article>
             <article class="tech-card reveal"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="" /><h3>HTML</h3></article>
             <article class="tech-card reveal"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="" /><h3>CSS</h3></article>
-            <article class="tech-card reveal"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="" /><h3>PHP</h3></article>
-            <article class="tech-card reveal"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="" /><h3>Laravel</h3></article>
-            <article class="tech-card reveal"><img class="tech-icon tech-icon-dark" src="https://cdn.simpleicons.org/nextdotjs/FFFFFF" alt="" /><h3>Next.Js</h3></article>
             <article class="tech-card reveal"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" /><h3>JavaScript</h3></article>
-            <article class="tech-card reveal"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="" /><h3>MySQL</h3></article>
           </div>
         </div>
       </section>
@@ -135,11 +128,26 @@
       <section id="contact" class="contact wrap section">
         <p class="section-index">03 / LET'S CONNECT</p>
         <h2>Punya ide?<br /><em>Mari buat nyata.</em></h2>
-        <a class="big-mail" href="mailto:ghiyasfhinrel@gmail.com">ghiyasfhinrel@gmail.com <span>↗</span></a>
-        <div class="contact-bottom"><p>TERBUKA UNTUK KOLABORASI<br />DAN PROYEK MENARIK</p><div><a href="#home">LinkedIn</a><a href="#home">Instagram</a><a href="#home">GitHub</a></div></div>
+        <a class="big-mail" href="mailto:gfhinrel@gmail.com">gfhinrel@gmail.com <span>↗</span></a>
+        <div class="contact-bottom"><p>TERBUKA UNTUK KOLABORASI<br />DAN PROYEK MENARIK</p><div class="social-cards">
+            <a class="social-card" href="https://www.linkedin.com/in/ghiyas-fhinrel-musyaffa-277a49312/" style="--brand:#0A66C2"><img class="social-icon" src="images/logo linkedin.png" alt="LinkedIn" /><span class="social-text"><strong>LinkedIn</strong><small>@ghiyas-fhinrel-musyaffa</small></span></a>
+            <a class="social-card" href="https://www.instagram.com/itsfhinn/" style="--brand:#E4405F"><img class="social-icon" src="images/logo instagram.jpg" alt="Instagram" /><span class="social-text"><strong>Instagram</strong><small>@itsfhinn</small></span></a>
+            <a class="social-card" href="https://github.com/gfhinrel-arch" style="--brand:#e6edf3"><img class="social-icon" src="images/logo github.png" alt="GitHub" /><span class="social-text"><strong>GitHub</strong><small>gfhinrel-arch</small></span></a>
+          </div></div>
       </section>
     </main>
-    <footer class="wrap"><span>© 2025 GHIYAS FHINREL MUSYAFFA</span><span>DESIGNED WITH INTENTION</span></footer>
+    <footer class="wrap"><span>© 2026 GHIYAS FHINREL MUSYAFFA</span><span>DESIGNED WITH INTENTION</span></footer>
+
+    <div class="certificate-modal" id="certificate-modal" role="dialog" aria-modal="true" aria-labelledby="certificate-modal-title">
+      <button class="certificate-modal-backdrop" type="button" data-cert-close aria-label="Tutup preview"></button>
+      <div class="certificate-modal-panel">
+        <button class="certificate-modal-close" type="button" data-cert-close aria-label="Tutup preview sertifikat">✕</button>
+        <img class="certificate-modal-image" src="" alt="" />
+        <div class="certificate-modal-meta"><p class="certificate-modal-category"></p><h3 class="certificate-modal-title" id="certificate-modal-title"></h3><span class="certificate-modal-year"></span></div>
+        <a class="certificate-modal-open" href="" target="_blank" rel="noopener">Buka gambar asli ↗</a>
+      </div>
+    </div>
+
     <script src="portfolio-data.js"></script>
     <script src="script.js"></script>
   </body>
