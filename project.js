@@ -1,3 +1,25 @@
+const nav = document.querySelector('.nav');
+const toggle = document.querySelector('.menu-button');
+const links = document.querySelectorAll('nav a');
+const closeMenu = () => {
+  nav.classList.remove('open');
+  toggle.setAttribute('aria-expanded', 'false');
+};
+
+toggle.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open);
+});
+
+links.forEach(link => link.addEventListener('click', closeMenu));
+document.addEventListener('click', event => {
+  if (nav.classList.contains('open') && !event.target.closest('.nav')) closeMenu();
+});
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && nav.classList.contains('open')) closeMenu();
+});
+document.body.classList.add('page-ready');
+
 const projectId = new URLSearchParams(window.location.search).get('id');
 const projects = window.portfolioProjects;
 const projectIndex = projects.findIndex(project => project.id === projectId);

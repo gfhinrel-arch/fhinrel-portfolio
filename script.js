@@ -1,13 +1,23 @@
 const nav = document.querySelector('.nav');
 const toggle = document.querySelector('.menu-button');
 const links = document.querySelectorAll('nav a');
+const closeMenu = () => {
+  nav.classList.remove('open');
+  toggle.setAttribute('aria-expanded', 'false');
+};
 
 toggle.addEventListener('click', () => {
   const open = nav.classList.toggle('open');
   toggle.setAttribute('aria-expanded', open);
 });
 
-links.forEach(link => link.addEventListener('click', () => nav.classList.remove('open')));
+links.forEach(link => link.addEventListener('click', closeMenu));
+document.addEventListener('click', event => {
+  if (nav.classList.contains('open') && !event.target.closest('.nav')) closeMenu();
+});
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && nav.classList.contains('open')) closeMenu();
+});
 
 const scrollTargets = document.querySelectorAll('main section > *, main section article, footer > *');
 scrollTargets.forEach(element => {
